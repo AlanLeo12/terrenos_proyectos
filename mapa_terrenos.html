@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3e56d9c8453b064d2dc27e2ed485b938 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3e56d9c8453b064d2dc27e2ed485b938" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3e56d9c8453b064d2dc27e2ed485b938 = L.map(
+                "map_3e56d9c8453b064d2dc27e2ed485b938",
+                {
+                    center: [19.28886705945951, -99.64105703162335],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4d2dddaa8feb2334cc56d0aa3731db1a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4d2dddaa8feb2334cc56d0aa3731db1a.addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var marker_d6be3e6368a04c211faa814772d8f7f5 = L.marker(
+                [19.36779441511499, -99.59501491311028],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_84c4f7d0f91c5a0f6715ed47c7c69a7e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_92d4f5a0bfafd39c7950f58e6150b80b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c61efa09e323d9194c643f3fb752765 = $(`<div id="html_2c61efa09e323d9194c643f3fb752765" style="width: 100.0%; height: 100.0%;">     <b>💰 $245,000</b><br>     📐 136m2<br>     📍  San Diego de los Padres CuexcontitlAn, Toluca     </div>`)[0];
+                popup_92d4f5a0bfafd39c7950f58e6150b80b.setContent(html_2c61efa09e323d9194c643f3fb752765);
+            
+        
+
+        marker_d6be3e6368a04c211faa814772d8f7f5.bindPopup(popup_92d4f5a0bfafd39c7950f58e6150b80b)
+        ;
+
+        
+    
+    
+                marker_d6be3e6368a04c211faa814772d8f7f5.setIcon(icon_84c4f7d0f91c5a0f6715ed47c7c69a7e);
+            
+    
+            var marker_e7bf484dff2b3e3b053d0ffaf56b1b0b = L.marker(
+                [19.34554736670146, -99.58499413207812],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_c079892b448b34774b6f8c6e21f79eba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_274dce3aa3d68e801687ede5ed9053b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_21675101e8d273fcd43775f37e785354 = $(`<div id="html_21675101e8d273fcd43775f37e785354" style="width: 100.0%; height: 100.0%;">     <b>💰 $260,000</b><br>     📐 130m2 <br>     📍 Boulevard Aeropuerto Toluca, San Nicolás Tolentino     </div>`)[0];
+                popup_274dce3aa3d68e801687ede5ed9053b5.setContent(html_21675101e8d273fcd43775f37e785354);
+            
+        
+
+        marker_e7bf484dff2b3e3b053d0ffaf56b1b0b.bindPopup(popup_274dce3aa3d68e801687ede5ed9053b5)
+        ;
+
+        
+    
+    
+                marker_e7bf484dff2b3e3b053d0ffaf56b1b0b.setIcon(icon_c079892b448b34774b6f8c6e21f79eba);
+            
+    
+            var marker_bc1ab2e472dd4dbc21e19536f5d15a5b = L.marker(
+                [19.314927364618505, -99.65271917695232],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_c018f65c554c8e1ba8bfb8dbd51ac56a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_183fe3a8172af5094ad53afd302b9e13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a81a3d5233bdb89e83fff9dc2077c017 = $(`<div id="html_a81a3d5233bdb89e83fff9dc2077c017" style="width: 100.0%; height: 100.0%;">     <b>💰 $300,000</b><br>     📐 144m2 <br>     📍 Santa Cruz Azcapotzaltongo     </div>`)[0];
+                popup_183fe3a8172af5094ad53afd302b9e13.setContent(html_a81a3d5233bdb89e83fff9dc2077c017);
+            
+        
+
+        marker_bc1ab2e472dd4dbc21e19536f5d15a5b.bindPopup(popup_183fe3a8172af5094ad53afd302b9e13)
+        ;
+
+        
+    
+    
+                marker_bc1ab2e472dd4dbc21e19536f5d15a5b.setIcon(icon_c018f65c554c8e1ba8bfb8dbd51ac56a);
+            
+    
+            var marker_ef7dbb2769fb4005e33838a5a004ba63 = L.marker(
+                [19.3304663757237, -99.70307727636596],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_cbeb06dedd48479481fde32f33d10edc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_127666a9ed93d96938f06b0dfe7874e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4754db7c1c339959bd82849af8f504fe = $(`<div id="html_4754db7c1c339959bd82849af8f504fe" style="width: 100.0%; height: 100.0%;">     <b>💰 $468,000</b><br>     📐 180m2<br>     📍 Calixtlahuaca, Toluca     </div>`)[0];
+                popup_127666a9ed93d96938f06b0dfe7874e8.setContent(html_4754db7c1c339959bd82849af8f504fe);
+            
+        
+
+        marker_ef7dbb2769fb4005e33838a5a004ba63.bindPopup(popup_127666a9ed93d96938f06b0dfe7874e8)
+        ;
+
+        
+    
+    
+                marker_ef7dbb2769fb4005e33838a5a004ba63.setIcon(icon_cbeb06dedd48479481fde32f33d10edc);
+            
+    
+            var marker_182cf840fa84d71776c4422ed5c53a5a = L.marker(
+                [19.319417866383887, -99.65094752258094],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_f58b97e03576b95c497524520caaba44 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d847e27d482c59f9cd9e4b1ecf31d56d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e912b491436d61f5eef21bfdf08e44bc = $(`<div id="html_e912b491436d61f5eef21bfdf08e44bc" style="width: 100.0%; height: 100.0%;">     <b>💰 $470,000</b><br>     📐 200m2<br>     📍 Santiago Miltepec, Toluca     </div>`)[0];
+                popup_d847e27d482c59f9cd9e4b1ecf31d56d.setContent(html_e912b491436d61f5eef21bfdf08e44bc);
+            
+        
+
+        marker_182cf840fa84d71776c4422ed5c53a5a.bindPopup(popup_d847e27d482c59f9cd9e4b1ecf31d56d)
+        ;
+
+        
+    
+    
+                marker_182cf840fa84d71776c4422ed5c53a5a.setIcon(icon_f58b97e03576b95c497524520caaba44);
+            
+    
+            var marker_147da010d1e77e49fa1a2f096c03ae3b = L.marker(
+                [19.28013986331184, -99.7145946055316],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_ebb849f6a9c5bbf466025e118f838fef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15be4bd82adfc203e754bf085bcc9c85 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9c1722e2dbb0b3d9119a3ca54f09384 = $(`<div id="html_f9c1722e2dbb0b3d9119a3ca54f09384" style="width: 100.0%; height: 100.0%;">     <b>💰 $500,000</b><br>     📐 150m2<br>     📍 San Jose Barbabosa     </div>`)[0];
+                popup_15be4bd82adfc203e754bf085bcc9c85.setContent(html_f9c1722e2dbb0b3d9119a3ca54f09384);
+            
+        
+
+        marker_147da010d1e77e49fa1a2f096c03ae3b.bindPopup(popup_15be4bd82adfc203e754bf085bcc9c85)
+        ;
+
+        
+    
+    
+                marker_147da010d1e77e49fa1a2f096c03ae3b.setIcon(icon_ebb849f6a9c5bbf466025e118f838fef);
+            
+    
+            var marker_141ae28caaf5ece27633a64794c156f7 = L.marker(
+                [19.23607649823176, -99.57624775155996],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_3de2c9c0b33367eb31afd8b99fa2acce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f1d54e89ac7af14a22dbf9af90f7dc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2df9f983140452cbed0d5e7fd20b014 = $(`<div id="html_e2df9f983140452cbed0d5e7fd20b014" style="width: 100.0%; height: 100.0%;">     <b>💰 $625,000</b><br>     📐 200m2 <br>     📍 San Miguel Totocuitlapilco     </div>`)[0];
+                popup_8f1d54e89ac7af14a22dbf9af90f7dc9.setContent(html_e2df9f983140452cbed0d5e7fd20b014);
+            
+        
+
+        marker_141ae28caaf5ece27633a64794c156f7.bindPopup(popup_8f1d54e89ac7af14a22dbf9af90f7dc9)
+        ;
+
+        
+    
+    
+                marker_141ae28caaf5ece27633a64794c156f7.setIcon(icon_3de2c9c0b33367eb31afd8b99fa2acce);
+            
+    
+            var marker_b234560e646565fea7db32d0b602991e = L.marker(
+                [19.24457676751816, -99.66932641783026],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_a2998c4102244e37b501bec5db9baf49 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3fabc41624588abc57c24c965187be84 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ebdb119f27de21eb7980d6f9fb039ad9 = $(`<div id="html_ebdb119f27de21eb7980d6f9fb039ad9" style="width: 100.0%; height: 100.0%;">     <b>💰 $650,000</b><br>     📐 200m2<br>     📍 Capultitlan      </div>`)[0];
+                popup_3fabc41624588abc57c24c965187be84.setContent(html_ebdb119f27de21eb7980d6f9fb039ad9);
+            
+        
+
+        marker_b234560e646565fea7db32d0b602991e.bindPopup(popup_3fabc41624588abc57c24c965187be84)
+        ;
+
+        
+    
+    
+                marker_b234560e646565fea7db32d0b602991e.setIcon(icon_a2998c4102244e37b501bec5db9baf49);
+            
+    
+            var marker_8e5fcbbf89662e8e128c540e0734f8cb = L.marker(
+                [19.261653163534863, -99.71808949137096],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_ea72048ea6d955517e20e18bc872e446 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1097fec6ae63a5b1143e52a3da091856 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2339e7a0ff2a614431449bf6bae06e70 = $(`<div id="html_2339e7a0ff2a614431449bf6bae06e70" style="width: 100.0%; height: 100.0%;">     <b>💰 $695,000</b><br>     📐 200m2<br>     📍 San Antonio Buenavista     </div>`)[0];
+                popup_1097fec6ae63a5b1143e52a3da091856.setContent(html_2339e7a0ff2a614431449bf6bae06e70);
+            
+        
+
+        marker_8e5fcbbf89662e8e128c540e0734f8cb.bindPopup(popup_1097fec6ae63a5b1143e52a3da091856)
+        ;
+
+        
+    
+    
+                marker_8e5fcbbf89662e8e128c540e0734f8cb.setIcon(icon_ea72048ea6d955517e20e18bc872e446);
+            
+    
+            var marker_1e4b2229bb0bbfa29a21ce52a305fd7d = L.marker(
+                [19.227602647963817, -99.5639548464693],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_724915bdbb7a249462ee4593cae93d21 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2802e6ae043e49d9575c9b2b66e7d3cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d53f1b60905a045ad086a36b7dd48e5 = $(`<div id="html_3d53f1b60905a045ad086a36b7dd48e5" style="width: 100.0%; height: 100.0%;">     <b>💰 $720,000</b><br>     📐 150m2<br>     📍 Agrícola Alvaro Obregón, Metepec     </div>`)[0];
+                popup_2802e6ae043e49d9575c9b2b66e7d3cc.setContent(html_3d53f1b60905a045ad086a36b7dd48e5);
+            
+        
+
+        marker_1e4b2229bb0bbfa29a21ce52a305fd7d.bindPopup(popup_2802e6ae043e49d9575c9b2b66e7d3cc)
+        ;
+
+        
+    
+    
+                marker_1e4b2229bb0bbfa29a21ce52a305fd7d.setIcon(icon_724915bdbb7a249462ee4593cae93d21);
+            
+    
+            var marker_78c41a8f6b8adc617a61c26860a05929 = L.marker(
+                [19.263154741169377, -99.66871689203886],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_914d2a09ba7446e617cbed59e352cfc4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b2139b4f28f227b4bc955aef82c296b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a1a6e6c92dbb60d7be3bf7b0ae1eebb = $(`<div id="html_1a1a6e6c92dbb60d7be3bf7b0ae1eebb" style="width: 100.0%; height: 100.0%;">     <b>💰 $803,000</b><br>     📐 146m2 <br>     📍 2d. Privada de A. Almazan, 8 Cedros, Toluca., Ocho Cedros, Toluca     </div>`)[0];
+                popup_b2139b4f28f227b4bc955aef82c296b3.setContent(html_1a1a6e6c92dbb60d7be3bf7b0ae1eebb);
+            
+        
+
+        marker_78c41a8f6b8adc617a61c26860a05929.bindPopup(popup_b2139b4f28f227b4bc955aef82c296b3)
+        ;
+
+        
+    
+    
+                marker_78c41a8f6b8adc617a61c26860a05929.setIcon(icon_914d2a09ba7446e617cbed59e352cfc4);
+            
+    
+            var marker_cbd634f5bf7a06ebf120a42822fd64ad = L.marker(
+                [19.25093397901381, -99.5687664071144],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_93e0a98d9bb3c33d04ab81f537c5e841 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_20e4b38ddc56c7aa50df2b77bc364d39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02c9e233527959d3b88e6d7344dc2d16 = $(`<div id="html_02c9e233527959d3b88e6d7344dc2d16" style="width: 100.0%; height: 100.0%;">     <b>💰 $2,244,600</b><br>     📐 200m2<br>     📍 Mariano Arista, Llano Grande     </div>`)[0];
+                popup_20e4b38ddc56c7aa50df2b77bc364d39.setContent(html_02c9e233527959d3b88e6d7344dc2d16);
+            
+        
+
+        marker_cbd634f5bf7a06ebf120a42822fd64ad.bindPopup(popup_20e4b38ddc56c7aa50df2b77bc364d39)
+        ;
+
+        
+    
+    
+                marker_cbd634f5bf7a06ebf120a42822fd64ad.setIcon(icon_93e0a98d9bb3c33d04ab81f537c5e841);
+            
+    
+            var marker_66587297c9eadf705cf74ee1f60095fc = L.marker(
+                [19.27628927968969, -99.6336207322988],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_a9089c95386d3762f2b014d2945d6f34 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5bba5eda97d658e1e5b812dfb6b0a4e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e80fc1a920a6451b3baf9bb4b1928f04 = $(`<div id="html_e80fc1a920a6451b3baf9bb4b1928f04" style="width: 100.0%; height: 100.0%;">     <b>💰 $2,250,000</b><br>     📐 240m2<br>     📍 Comisión federal de electricidad      </div>`)[0];
+                popup_5bba5eda97d658e1e5b812dfb6b0a4e5.setContent(html_e80fc1a920a6451b3baf9bb4b1928f04);
+            
+        
+
+        marker_66587297c9eadf705cf74ee1f60095fc.bindPopup(popup_5bba5eda97d658e1e5b812dfb6b0a4e5)
+        ;
+
+        
+    
+    
+                marker_66587297c9eadf705cf74ee1f60095fc.setIcon(icon_a9089c95386d3762f2b014d2945d6f34);
+            
+    
+            var marker_14321f947a6991aad7598df2e634c830 = L.marker(
+                [19.24362675198825, -99.57192262087509],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_3741c0705818b6a368f2e37a77d7c1cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_657c2a1b3eee47c18e9a3e9340d79363 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e27ec9980136b55b0b8a58f5d5029a8d = $(`<div id="html_e27ec9980136b55b0b8a58f5d5029a8d" style="width: 100.0%; height: 100.0%;">     <b>💰 $2,550,000</b><br>     📐 201m2<br>     📍 Álamo 535, Llano Grande, Metepec     </div>`)[0];
+                popup_657c2a1b3eee47c18e9a3e9340d79363.setContent(html_e27ec9980136b55b0b8a58f5d5029a8d);
+            
+        
+
+        marker_14321f947a6991aad7598df2e634c830.bindPopup(popup_657c2a1b3eee47c18e9a3e9340d79363)
+        ;
+
+        
+    
+    
+                marker_14321f947a6991aad7598df2e634c830.setIcon(icon_3741c0705818b6a368f2e37a77d7c1cb);
+            
+    
+            var marker_b6a8fa73c0f8373fc010f311b35614e5 = L.marker(
+                [19.32654768746583, -99.64348451407034],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_c4bc772036cb878db64b942384196cb1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_68aca74a05c8ec1937c0559a34366985 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5652a1f225dc298e772fbfd6abf2803 = $(`<div id="html_a5652a1f225dc298e772fbfd6abf2803" style="width: 100.0%; height: 100.0%;">     <b>💰 $500,000</b><br>     📐 200m2<br>     📍 Alfonso Garcia Sanchez, San Cristóbal HuichochitlAn, Toluca     </div>`)[0];
+                popup_68aca74a05c8ec1937c0559a34366985.setContent(html_a5652a1f225dc298e772fbfd6abf2803);
+            
+        
+
+        marker_b6a8fa73c0f8373fc010f311b35614e5.bindPopup(popup_68aca74a05c8ec1937c0559a34366985)
+        ;
+
+        
+    
+    
+                marker_b6a8fa73c0f8373fc010f311b35614e5.setIcon(icon_c4bc772036cb878db64b942384196cb1);
+            
+    
+            var marker_3ae28b4792b860d9c180e7e9715830a2 = L.marker(
+                [19.29584620132881, -99.68966353171274],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_6a932b4602418dedb1cdbb6b346d10d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7ea6e8690cfc55e2672b6bffa39cb4b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee8c71f448f1f7cbd986d379d2171a52 = $(`<div id="html_ee8c71f448f1f7cbd986d379d2171a52" style="width: 100.0%; height: 100.0%;">     <b>💰 $870,000</b><br>     📐 133m2<br>     📍 Colonia San Mateo Oxtotitlán     </div>`)[0];
+                popup_7ea6e8690cfc55e2672b6bffa39cb4b1.setContent(html_ee8c71f448f1f7cbd986d379d2171a52);
+            
+        
+
+        marker_3ae28b4792b860d9c180e7e9715830a2.bindPopup(popup_7ea6e8690cfc55e2672b6bffa39cb4b1)
+        ;
+
+        
+    
+    
+                marker_3ae28b4792b860d9c180e7e9715830a2.setIcon(icon_6a932b4602418dedb1cdbb6b346d10d3);
+            
+    
+            var marker_038fe2bf3f8972b21188ac9db3fe5602 = L.marker(
+                [19.322506917250298, -99.62023499072184],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_3cf87562b54f157138e5a4c53d03a93d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2af1765260bc8cb522ecb20f9b0b9288 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a535c60bb9320415e7d5b23680f1542 = $(`<div id="html_7a535c60bb9320415e7d5b23680f1542" style="width: 100.0%; height: 100.0%;">     <b>💰 $850,000</b><br>     📐 209m2<br>     📍 Cerrada César Camacho Quiroz Y San Angelin, San Lorenzo Tepaltitlan     </div>`)[0];
+                popup_2af1765260bc8cb522ecb20f9b0b9288.setContent(html_7a535c60bb9320415e7d5b23680f1542);
+            
+        
+
+        marker_038fe2bf3f8972b21188ac9db3fe5602.bindPopup(popup_2af1765260bc8cb522ecb20f9b0b9288)
+        ;
+
+        
+    
+    
+                marker_038fe2bf3f8972b21188ac9db3fe5602.setIcon(icon_3cf87562b54f157138e5a4c53d03a93d);
+            
+    
+            var marker_0b53d6ac2b7ccf79ff16ae89dc2b5ecb = L.marker(
+                [19.313657348663806, -99.61004404051307],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_e44b3118034c9bcc46cc1c9831ff53d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60c1380378a9af8d5ffe078f294fb244 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dcc805692a9adb5ebf0167b8b18c67e9 = $(`<div id="html_dcc805692a9adb5ebf0167b8b18c67e9" style="width: 100.0%; height: 100.0%;">     <b>💰 $700,000</b><br>     📐 200m2<br>     📍 Puerto de Guaymas, Sn Lorenzo T, San Lorenzo TepaltitlAn Centro     </div>`)[0];
+                popup_60c1380378a9af8d5ffe078f294fb244.setContent(html_dcc805692a9adb5ebf0167b8b18c67e9);
+            
+        
+
+        marker_0b53d6ac2b7ccf79ff16ae89dc2b5ecb.bindPopup(popup_60c1380378a9af8d5ffe078f294fb244)
+        ;
+
+        
+    
+    
+                marker_0b53d6ac2b7ccf79ff16ae89dc2b5ecb.setIcon(icon_e44b3118034c9bcc46cc1c9831ff53d9);
+            
+    
+            var marker_5a8ded3fa5e53c0a8258ed2b2d38e525 = L.marker(
+                [19.314841118772105, -99.65280206312842],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_d97f0cca2f4a76c1232579763d10d876 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_96ef53a5a0eca7fc078ec86fb6fe7fb2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5437f09475c18fc87de8ea23b20c104f = $(`<div id="html_5437f09475c18fc87de8ea23b20c104f" style="width: 100.0%; height: 100.0%;">     <b>💰 $415,000</b><br>     📐 200m2<br>     📍 Segunda Privada de Mil Cumbres, Santa Cruz Azcapotzaltongo, Toluca     </div>`)[0];
+                popup_96ef53a5a0eca7fc078ec86fb6fe7fb2.setContent(html_5437f09475c18fc87de8ea23b20c104f);
+            
+        
+
+        marker_5a8ded3fa5e53c0a8258ed2b2d38e525.bindPopup(popup_96ef53a5a0eca7fc078ec86fb6fe7fb2)
+        ;
+
+        
+    
+    
+                marker_5a8ded3fa5e53c0a8258ed2b2d38e525.setIcon(icon_d97f0cca2f4a76c1232579763d10d876);
+            
+    
+            var marker_4aec9af86f16c044e9cde7200e3aa892 = L.marker(
+                [19.297249993969107, -99.69535325597882],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_a768545196df7a6e01bfbf9477a47698 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f9e75a342b157cc4ccd70413b5449b28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_188e40c6aabe99a09a4e115e2b323461 = $(`<div id="html_188e40c6aabe99a09a4e115e2b323461" style="width: 100.0%; height: 100.0%;">     <b>💰 $900,000</b><br>     📐 300m2<br>     📍 Altamirano , San Mateo OxtotitlAn, Toluca     </div>`)[0];
+                popup_f9e75a342b157cc4ccd70413b5449b28.setContent(html_188e40c6aabe99a09a4e115e2b323461);
+            
+        
+
+        marker_4aec9af86f16c044e9cde7200e3aa892.bindPopup(popup_f9e75a342b157cc4ccd70413b5449b28)
+        ;
+
+        
+    
+    
+                marker_4aec9af86f16c044e9cde7200e3aa892.setIcon(icon_a768545196df7a6e01bfbf9477a47698);
+            
+    
+            var marker_084775f1e1975bc410b08fcd00df7125 = L.marker(
+                [19.25865306636941, -99.65077823282724],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_92a11e321890f9fdf7323eb944ad34e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0515d45b26751804c65cacf65a274834 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04f071cb17bf0bacba9e92614c09b072 = $(`<div id="html_04f071cb17bf0bacba9e92614c09b072" style="width: 100.0%; height: 100.0%;">     <b>💰 $992,160</b><br>     📐 124m2<br>     📍 Terrenos EN Venta Dentro DE Privada MUY Cerca DE Heriberto Enriquez Y Ceboruco EN Toluca, CapultitlAn, Toluca      </div>`)[0];
+                popup_0515d45b26751804c65cacf65a274834.setContent(html_04f071cb17bf0bacba9e92614c09b072);
+            
+        
+
+        marker_084775f1e1975bc410b08fcd00df7125.bindPopup(popup_0515d45b26751804c65cacf65a274834)
+        ;
+
+        
+    
+    
+                marker_084775f1e1975bc410b08fcd00df7125.setIcon(icon_92a11e321890f9fdf7323eb944ad34e6);
+            
+    
+            var marker_35e6442f60cc335c8bd1e345e1ea7c7c = L.marker(
+                [19.263565893325776, -99.66890128058468],
+                {
+}
+            ).addTo(map_3e56d9c8453b064d2dc27e2ed485b938);
+        
+    
+            var icon_586280b0c865eaf5926c8a5814b30907 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_655f83a14f364ba5d25e3b996b908a66 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f04a7d6c8e3dfa72f9575a79dfe92bc1 = $(`<div id="html_f04a7d6c8e3dfa72f9575a79dfe92bc1" style="width: 100.0%; height: 100.0%;">     <b>💰 $803,000</b><br>     📐 146m2 <br>     📍 2d. Privada de A. Almazan, 8 Cedros, Toluca., Ocho Cedros, Toluca     </div>`)[0];
+                popup_655f83a14f364ba5d25e3b996b908a66.setContent(html_f04a7d6c8e3dfa72f9575a79dfe92bc1);
+            
+        
+
+        marker_35e6442f60cc335c8bd1e345e1ea7c7c.bindPopup(popup_655f83a14f364ba5d25e3b996b908a66)
+        ;
+
+        
+    
+    
+                marker_35e6442f60cc335c8bd1e345e1ea7c7c.setIcon(icon_586280b0c865eaf5926c8a5814b30907);
+            
+</script>
+</html>

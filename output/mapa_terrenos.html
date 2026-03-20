@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_db86fc5cb7313e5d2198bfbd5c526eed {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_db86fc5cb7313e5d2198bfbd5c526eed" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_db86fc5cb7313e5d2198bfbd5c526eed = L.map(
+                "map_db86fc5cb7313e5d2198bfbd5c526eed",
+                {
+                    center: [19.28886705945951, -99.64105703162335],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2812ce2e2fdc3c3041d05c32a49fbbc8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2812ce2e2fdc3c3041d05c32a49fbbc8.addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+            var marker_8165c912aea43c53f2f6b135d1767fdb = L.marker(
+                [19.36779441511499, -99.59501491311029],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_83c592460750d2f24900e5b465a2b771 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b6122471eb69800596139d4140b78d2 = $(`<div id="html_1b6122471eb69800596139d4140b78d2" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $245,000<br>         <b>Superficie:</b> 136.0 m²<br>         <b>Precio/m²:</b> $1,801         </div>`)[0];
+                popup_83c592460750d2f24900e5b465a2b771.setContent(html_1b6122471eb69800596139d4140b78d2);
+            
+        
+
+        marker_8165c912aea43c53f2f6b135d1767fdb.bindPopup(popup_83c592460750d2f24900e5b465a2b771)
+        ;
+
+        
+    
+    
+            var marker_ee5dc90c31ee6f3e984882f84a7f7580 = L.marker(
+                [19.34554736670146, -99.58499413207812],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_91f63b90043845b11adc6d5b42c77bc0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ea722c24d84c5a360028346abfbb11f = $(`<div id="html_0ea722c24d84c5a360028346abfbb11f" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $260,000<br>         <b>Superficie:</b> 130.0 m²<br>         <b>Precio/m²:</b> $2,000         </div>`)[0];
+                popup_91f63b90043845b11adc6d5b42c77bc0.setContent(html_0ea722c24d84c5a360028346abfbb11f);
+            
+        
+
+        marker_ee5dc90c31ee6f3e984882f84a7f7580.bindPopup(popup_91f63b90043845b11adc6d5b42c77bc0)
+        ;
+
+        
+    
+    
+            var marker_e9c0dd459c40b4a6646b40bb9431e1d1 = L.marker(
+                [19.314927364618505, -99.65271917695232],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_54b2a15ee5ced62fae705b7cfc18a1b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e8b56ffdb6f8a3d3aa6a1aaf8879385 = $(`<div id="html_6e8b56ffdb6f8a3d3aa6a1aaf8879385" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $300,000<br>         <b>Superficie:</b> 144.0 m²<br>         <b>Precio/m²:</b> $2,083         </div>`)[0];
+                popup_54b2a15ee5ced62fae705b7cfc18a1b8.setContent(html_6e8b56ffdb6f8a3d3aa6a1aaf8879385);
+            
+        
+
+        marker_e9c0dd459c40b4a6646b40bb9431e1d1.bindPopup(popup_54b2a15ee5ced62fae705b7cfc18a1b8)
+        ;
+
+        
+    
+    
+            var marker_21281b16046d0d7d2c2561502c2fded8 = L.marker(
+                [19.3304663757237, -99.70307727636595],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_680189217e3c5dabb11fa9f2e13d9827 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_68c489a7780b98c9d16021cab02acb3d = $(`<div id="html_68c489a7780b98c9d16021cab02acb3d" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $468,000<br>         <b>Superficie:</b> 180.0 m²<br>         <b>Precio/m²:</b> $2,600         </div>`)[0];
+                popup_680189217e3c5dabb11fa9f2e13d9827.setContent(html_68c489a7780b98c9d16021cab02acb3d);
+            
+        
+
+        marker_21281b16046d0d7d2c2561502c2fded8.bindPopup(popup_680189217e3c5dabb11fa9f2e13d9827)
+        ;
+
+        
+    
+    
+            var marker_85ffe2db9c46a12a759314f68f881fea = L.marker(
+                [19.319417866383887, -99.65094752258094],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_0cf5e8a34d3f66a5e4c735d6532ea459 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_721522c5a59e80ba1285bf272fda5d0b = $(`<div id="html_721522c5a59e80ba1285bf272fda5d0b" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $470,000<br>         <b>Superficie:</b> 200.0 m²<br>         <b>Precio/m²:</b> $2,350         </div>`)[0];
+                popup_0cf5e8a34d3f66a5e4c735d6532ea459.setContent(html_721522c5a59e80ba1285bf272fda5d0b);
+            
+        
+
+        marker_85ffe2db9c46a12a759314f68f881fea.bindPopup(popup_0cf5e8a34d3f66a5e4c735d6532ea459)
+        ;
+
+        
+    
+    
+            var marker_fbc2e100f82b6ab1a3b6d9356c71a4e3 = L.marker(
+                [19.280139863311838, -99.7145946055316],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_54512a345ac4732a081199ac995dc8da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a29e0c639542eeb05b9e982e8a7886c = $(`<div id="html_4a29e0c639542eeb05b9e982e8a7886c" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $500,000<br>         <b>Superficie:</b> 150.0 m²<br>         <b>Precio/m²:</b> $3,333         </div>`)[0];
+                popup_54512a345ac4732a081199ac995dc8da.setContent(html_4a29e0c639542eeb05b9e982e8a7886c);
+            
+        
+
+        marker_fbc2e100f82b6ab1a3b6d9356c71a4e3.bindPopup(popup_54512a345ac4732a081199ac995dc8da)
+        ;
+
+        
+    
+    
+            var marker_a62e0e593294253b8ad10e41e6436b60 = L.marker(
+                [19.23607649823176, -99.57624775155995],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_0c7e409bdf48ecd33b53e23338700908 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1149464000d05b89f66ad1fa3f9f66a2 = $(`<div id="html_1149464000d05b89f66ad1fa3f9f66a2" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Metepec <br>         <b>Precio:</b> $625,000<br>         <b>Superficie:</b> 200.0 m²<br>         <b>Precio/m²:</b> $3,125         </div>`)[0];
+                popup_0c7e409bdf48ecd33b53e23338700908.setContent(html_1149464000d05b89f66ad1fa3f9f66a2);
+            
+        
+
+        marker_a62e0e593294253b8ad10e41e6436b60.bindPopup(popup_0c7e409bdf48ecd33b53e23338700908)
+        ;
+
+        
+    
+    
+            var marker_4739ce1ae424fa56c1506dbae8564088 = L.marker(
+                [19.24457676751816, -99.66932641783026],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_be3de80be7ab627fd7b8b2a9ce788654 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_77ac5874a0de983a004daf3d52faf6c1 = $(`<div id="html_77ac5874a0de983a004daf3d52faf6c1" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $650,000<br>         <b>Superficie:</b> 200.0 m²<br>         <b>Precio/m²:</b> $3,250         </div>`)[0];
+                popup_be3de80be7ab627fd7b8b2a9ce788654.setContent(html_77ac5874a0de983a004daf3d52faf6c1);
+            
+        
+
+        marker_4739ce1ae424fa56c1506dbae8564088.bindPopup(popup_be3de80be7ab627fd7b8b2a9ce788654)
+        ;
+
+        
+    
+    
+            var marker_17b86e6ae8586edd02704c6e08e0ddff = L.marker(
+                [19.261653163534866, -99.71808949137095],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_643628551045d26ab3801414a8fbc9bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da36f394b8f5a6508772de048bd7a92a = $(`<div id="html_da36f394b8f5a6508772de048bd7a92a" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $695,000<br>         <b>Superficie:</b> 200.0 m²<br>         <b>Precio/m²:</b> $3,475         </div>`)[0];
+                popup_643628551045d26ab3801414a8fbc9bb.setContent(html_da36f394b8f5a6508772de048bd7a92a);
+            
+        
+
+        marker_17b86e6ae8586edd02704c6e08e0ddff.bindPopup(popup_643628551045d26ab3801414a8fbc9bb)
+        ;
+
+        
+    
+    
+            var marker_6d0b1bb087ccc9bef86e02a7c854549a = L.marker(
+                [19.227602647963817, -99.5639548464693],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_9e46963e27c92ba22c1c76212c69c200 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5bcc49f866dd02e10e1726c672efe3d5 = $(`<div id="html_5bcc49f866dd02e10e1726c672efe3d5" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Metepec <br>         <b>Precio:</b> $720,000<br>         <b>Superficie:</b> 150.0 m²<br>         <b>Precio/m²:</b> $4,800         </div>`)[0];
+                popup_9e46963e27c92ba22c1c76212c69c200.setContent(html_5bcc49f866dd02e10e1726c672efe3d5);
+            
+        
+
+        marker_6d0b1bb087ccc9bef86e02a7c854549a.bindPopup(popup_9e46963e27c92ba22c1c76212c69c200)
+        ;
+
+        
+    
+    
+            var marker_ba76198cdef04104453eb6a5ac995290 = L.marker(
+                [19.263154741169377, -99.66871689203886],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_cad90da965798eeccec4b7bbe1d42fc1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b8908ef61ff37f68d066f6f3de8fe61 = $(`<div id="html_8b8908ef61ff37f68d066f6f3de8fe61" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $803,000<br>         <b>Superficie:</b> 146.0 m²<br>         <b>Precio/m²:</b> $5,500         </div>`)[0];
+                popup_cad90da965798eeccec4b7bbe1d42fc1.setContent(html_8b8908ef61ff37f68d066f6f3de8fe61);
+            
+        
+
+        marker_ba76198cdef04104453eb6a5ac995290.bindPopup(popup_cad90da965798eeccec4b7bbe1d42fc1)
+        ;
+
+        
+    
+    
+            var marker_fe37fd2486d6fcc6c6848731fd9c0502 = L.marker(
+                [19.250933979013812, -99.5687664071144],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_e31afdc23cf73d6cf8f3f9eae73018dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a6d4372eec21cef383130670910dcb1 = $(`<div id="html_9a6d4372eec21cef383130670910dcb1" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Metepec <br>         <b>Precio:</b> $2,244,600<br>         <b>Superficie:</b> 200.0 m²<br>         <b>Precio/m²:</b> $11,223         </div>`)[0];
+                popup_e31afdc23cf73d6cf8f3f9eae73018dc.setContent(html_9a6d4372eec21cef383130670910dcb1);
+            
+        
+
+        marker_fe37fd2486d6fcc6c6848731fd9c0502.bindPopup(popup_e31afdc23cf73d6cf8f3f9eae73018dc)
+        ;
+
+        
+    
+    
+            var marker_9414f3c3772fe75a316bfb09ff21a005 = L.marker(
+                [19.27628927968969, -99.63362073229881],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_6f55bf8a790496d0afe1e860e30a3a2b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79f68226529c4b2a965d6c9a9e54a3ca = $(`<div id="html_79f68226529c4b2a965d6c9a9e54a3ca" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $2,250,000<br>         <b>Superficie:</b> 240.0 m²<br>         <b>Precio/m²:</b> $9,375         </div>`)[0];
+                popup_6f55bf8a790496d0afe1e860e30a3a2b.setContent(html_79f68226529c4b2a965d6c9a9e54a3ca);
+            
+        
+
+        marker_9414f3c3772fe75a316bfb09ff21a005.bindPopup(popup_6f55bf8a790496d0afe1e860e30a3a2b)
+        ;
+
+        
+    
+    
+            var marker_913e37c10df336d309fc5f48fae2593a = L.marker(
+                [19.24362675198825, -99.57192262087509],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_c569917c029af93ad85c119e9e72d7c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18aad43514b855b038a9f4ebb997871a = $(`<div id="html_18aad43514b855b038a9f4ebb997871a" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Metepec <br>         <b>Precio:</b> $2,550,000<br>         <b>Superficie:</b> 201.0 m²<br>         <b>Precio/m²:</b> $12,687         </div>`)[0];
+                popup_c569917c029af93ad85c119e9e72d7c2.setContent(html_18aad43514b855b038a9f4ebb997871a);
+            
+        
+
+        marker_913e37c10df336d309fc5f48fae2593a.bindPopup(popup_c569917c029af93ad85c119e9e72d7c2)
+        ;
+
+        
+    
+    
+            var marker_e8eb64df5eb3d5855a6b1f93c9b6eabb = L.marker(
+                [19.32654768746583, -99.64348451407034],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_950321316e438f8a2424422dc6bde8ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8075e4c3e5bc62b9659f6ac18969b471 = $(`<div id="html_8075e4c3e5bc62b9659f6ac18969b471" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $500,000<br>         <b>Superficie:</b> 200.0 m²<br>         <b>Precio/m²:</b> $2,500         </div>`)[0];
+                popup_950321316e438f8a2424422dc6bde8ce.setContent(html_8075e4c3e5bc62b9659f6ac18969b471);
+            
+        
+
+        marker_e8eb64df5eb3d5855a6b1f93c9b6eabb.bindPopup(popup_950321316e438f8a2424422dc6bde8ce)
+        ;
+
+        
+    
+    
+            var marker_735dc4cf8c7266dfb1a626e13d4288b2 = L.marker(
+                [19.295846201328814, -99.68966353171274],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_96e4c2cce50f30e4beee43a9fd667637 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f16af79bcb44c044a8567be949c08791 = $(`<div id="html_f16af79bcb44c044a8567be949c08791" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $870,000<br>         <b>Superficie:</b> 133.0 m²<br>         <b>Precio/m²:</b> $6,541         </div>`)[0];
+                popup_96e4c2cce50f30e4beee43a9fd667637.setContent(html_f16af79bcb44c044a8567be949c08791);
+            
+        
+
+        marker_735dc4cf8c7266dfb1a626e13d4288b2.bindPopup(popup_96e4c2cce50f30e4beee43a9fd667637)
+        ;
+
+        
+    
+    
+            var marker_ace63c87696c98404bb58426b8e2807b = L.marker(
+                [19.322506917250298, -99.62023499072183],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_9b8ab3530d761b633dc99e4718f91d3f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ba63f165ddf86ee0ef7fda05b0d87071 = $(`<div id="html_ba63f165ddf86ee0ef7fda05b0d87071" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $850,000<br>         <b>Superficie:</b> 209.0 m²<br>         <b>Precio/m²:</b> $4,067         </div>`)[0];
+                popup_9b8ab3530d761b633dc99e4718f91d3f.setContent(html_ba63f165ddf86ee0ef7fda05b0d87071);
+            
+        
+
+        marker_ace63c87696c98404bb58426b8e2807b.bindPopup(popup_9b8ab3530d761b633dc99e4718f91d3f)
+        ;
+
+        
+    
+    
+            var marker_7dbd33f4e2d137b7b57c8f0652e6d859 = L.marker(
+                [19.313657348663806, -99.61004404051309],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_451d13c4070ee363f58bdccda10e34a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97dcac30f1c014fad2e6639bd6001e5a = $(`<div id="html_97dcac30f1c014fad2e6639bd6001e5a" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $700,000<br>         <b>Superficie:</b> 200.0 m²<br>         <b>Precio/m²:</b> $3,500         </div>`)[0];
+                popup_451d13c4070ee363f58bdccda10e34a0.setContent(html_97dcac30f1c014fad2e6639bd6001e5a);
+            
+        
+
+        marker_7dbd33f4e2d137b7b57c8f0652e6d859.bindPopup(popup_451d13c4070ee363f58bdccda10e34a0)
+        ;
+
+        
+    
+    
+            var marker_8299b6c38466c97da71e1f0f05102c64 = L.marker(
+                [19.314841118772105, -99.65280206312842],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_5726498a0d319b5d3a56ba382b0db569 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b2346d5ce695414484867eb20137da8 = $(`<div id="html_7b2346d5ce695414484867eb20137da8" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $415,000<br>         <b>Superficie:</b> 200.0 m²<br>         <b>Precio/m²:</b> $2,075         </div>`)[0];
+                popup_5726498a0d319b5d3a56ba382b0db569.setContent(html_7b2346d5ce695414484867eb20137da8);
+            
+        
+
+        marker_8299b6c38466c97da71e1f0f05102c64.bindPopup(popup_5726498a0d319b5d3a56ba382b0db569)
+        ;
+
+        
+    
+    
+            var marker_42e5713a7d276f11782c7741e396e99e = L.marker(
+                [19.297249993969107, -99.69535325597882],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_fae6443d66552cbce1d618bdf9e830e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd5de49ecce3fa8ad47424d5c68063b8 = $(`<div id="html_dd5de49ecce3fa8ad47424d5c68063b8" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $900,000<br>         <b>Superficie:</b> 300.0 m²<br>         <b>Precio/m²:</b> $3,000         </div>`)[0];
+                popup_fae6443d66552cbce1d618bdf9e830e7.setContent(html_dd5de49ecce3fa8ad47424d5c68063b8);
+            
+        
+
+        marker_42e5713a7d276f11782c7741e396e99e.bindPopup(popup_fae6443d66552cbce1d618bdf9e830e7)
+        ;
+
+        
+    
+    
+            var marker_aed68351cb26db3ef95eb1e14c5f498c = L.marker(
+                [19.258653066369412, -99.65077823282724],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_ec689dee66b33c1988755da2bb87f096 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ed1034c0799c02c3e0f27eb620c3efb = $(`<div id="html_2ed1034c0799c02c3e0f27eb620c3efb" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $992,160<br>         <b>Superficie:</b> 124.0 m²<br>         <b>Precio/m²:</b> $8,001         </div>`)[0];
+                popup_ec689dee66b33c1988755da2bb87f096.setContent(html_2ed1034c0799c02c3e0f27eb620c3efb);
+            
+        
+
+        marker_aed68351cb26db3ef95eb1e14c5f498c.bindPopup(popup_ec689dee66b33c1988755da2bb87f096)
+        ;
+
+        
+    
+    
+            var marker_9047bc81790660109443e316f51bbd73 = L.marker(
+                [19.263565893325776, -99.66890128058468],
+                {
+}
+            ).addTo(map_db86fc5cb7313e5d2198bfbd5c526eed);
+        
+    
+        var popup_6867fb4bc7e50098dac0b2a5787fe7ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f7a2c00588267a6cd526615ff1abb3e = $(`<div id="html_1f7a2c00588267a6cd526615ff1abb3e" style="width: 100.0%; height: 100.0%;">         <b>Municipio:</b> Toluca <br>         <b>Precio:</b> $803,000<br>         <b>Superficie:</b> 146.0 m²<br>         <b>Precio/m²:</b> $5,500         </div>`)[0];
+                popup_6867fb4bc7e50098dac0b2a5787fe7ad.setContent(html_1f7a2c00588267a6cd526615ff1abb3e);
+            
+        
+
+        marker_9047bc81790660109443e316f51bbd73.bindPopup(popup_6867fb4bc7e50098dac0b2a5787fe7ad)
+        ;
+
+        
+    
+</script>
+</html>
