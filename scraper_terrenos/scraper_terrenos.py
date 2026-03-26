@@ -1,60 +1,89 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import time
 
-# Configurar navegador automático
+# -------- FUNCIÓN PARA LIMPIAR PRECIO --------
+def limpiar_precio(precio):
+    try:
+        return int(precio.replace(".", "").replace(",", ""))
+    except:
+        return None
+
+# -------- CONFIGURAR DRIVER --------
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
-url = "https://inmuebles.mercadolibre.com.mx/terrenos/venta/toluca"
-driver.get(url)
-
-time.sleep(5)
-
-# Obtener todos los anuncios
-items = driver.find_elements(By.CLASS_NAME, "ui-search-layout__item")
-
-print(f"Se encontraron {len(items)} elementos")
-
 data = []
 
-for item in items:
+# -------- PAGINACIÓN --------
+for pagina in range(0, 300, 48):  # puedes ajustar rango
+
     try:
-        # Obtener todo el texto del anuncio
-        texto = item.text.split("\n")
+        url = f"https://inmuebles.mercadolibre.com.mx/terrenos/venta/toluca/_Desde_{pagina}"
+        driver.get(url)
 
-        # Limpiar texto vacío
-        texto = [t for t in texto if t.strip() != ""]
+        wait = WebDriverWait(driver, 10)
+        items = wait.until(
+            EC.presence_of_all_elements_located((By.CLASS_NAME, "ui-search-layout__item"))
+        )
 
-        # -------- EXTRAER DATOS --------
+        print(f"Página {pagina} -> {len(items)} elementos")
 
-        titulo = texto[0] if len(texto) > 0 else "No disponible"
-        precio = next((t for t in texto if "$" in t or "," in t), "No disponible")
-        ubicacion = texto[-1] if len(texto) > 1 else "No disponible"
+        for item in items:
+            try:
+                # -------- TITULO --------
+                titulo_elem = item.find_elements(By.CLASS_NAME, "ui-search-item__title")
+                titulo = titulo_elem[0].text if titulo_elem else "No disponible"
 
-        # -------- FILTRO INTELIGENTE --------
-        if "Terreno" in titulo and precio != "No disponible":
-            data.append({
-                "titulo": titulo,
-                "precio": precio,
-                "ubicacion": ubicacion
-            })
+                # -------- PRECIO --------
+                precio_elem = item.find_elements(By.CLASS_NAME, "andes-money-amount__fraction")
+                precio = precio_elem[0].text if precio_elem else "No disponible"
+                precio = limpiar_precio(precio)
+
+                # -------- UBICACIÓN --------
+                ubicacion_elem = item.find_elements(By.CLASS_NAME, "ui-search-item__location")
+                ubicacion = ubicacion_elem[0].text if ubicacion_elem else "No disponible"
+
+                # -------- LINK --------
+                link_elem = item.find_elements(By.TAG_NAME, "a")
+                link = link_elem[0].get_attribute("href") if link_elem else "No disponible"
+
+                # -------- FILTRO --------
+                if precio is not None:
+                    data.append({
+                        "titulo": titulo,
+                        "precio": precio,
+                        "ubicacion": ubicacion,
+                        "link": link
+                    })
+
+            except:
+                continue
+
+        # -------- DELAY --------
+        time.sleep(2)
 
     except:
+        print(f"Error en página {pagina}")
         continue
 
+# -------- CERRAR --------
 driver.quit()
 
-# Crear DataFrame
+# -------- DATAFRAME --------
 df = pd.DataFrame(data)
 
-print("\nDATOS LIMPIOS:\n")
-print(df.head())
+# -------- LIMPIEZA FINAL --------
+df = df.drop_duplicates()
 
-# -------- GUARDAR EN EXCEL --------
-df.to_excel("terrenos_filtrados.xlsx", index=False)
+print(f"\nTotal de registros: {len(df)}")
 
-print("\nArchivo guardado como terrenos_filtrados.xlsx")
+# -------- EXPORTAR --------
+df.to_excel("terrenos_final.xlsx", index=False)
+
+print("\nArchivo guardado como terrenos_final.xlsx")
