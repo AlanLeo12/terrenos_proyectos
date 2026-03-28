@@ -1,89 +1,86 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import pandas as pd
+from firecrawl import FirecrawlApp
+import json
+import os
 import time
+from dotenv import load_dotenv
 
-# -------- FUNCIÓN PARA LIMPIAR PRECIO --------
-def limpiar_precio(precio):
+# -------- CONFIG --------
+load_dotenv()
+api_key = os.getenv("FIRECRAWL_API_KEY")
+
+if not api_key:
+    raise ValueError("❌ No se encontró la API KEY. Revisa tu archivo .env")
+
+app = FirecrawlApp(api_key=api_key)
+
+# -------- FUNCIONES --------
+
+def guardar_json(data, nombre):
+    with open(nombre, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
+def obtener_links(url):
+    print("🔎 Obteniendo links...")
+
     try:
-        return int(precio.replace(".", "").replace(",", ""))
-    except:
-        return None
+        data = app.scrape(url, params={
+            "formats": ["links"]
+        })
 
-# -------- CONFIGURAR DRIVER --------
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service)
+        links = data.get("links", [])
 
-data = []
+        # Filtrar solo propiedades reales
+        links = [l for l in links if "inmueble.mercadolibre.com.mx" in l]
 
-# -------- PAGINACIÓN --------
-for pagina in range(0, 300, 48):  # puedes ajustar rango
+        print(f"✅ {len(links)} links encontrados")
+        return links
 
-    try:
-        url = f"https://inmuebles.mercadolibre.com.mx/terrenos/venta/toluca/_Desde_{pagina}"
-        driver.get(url)
+    except Exception as e:
+        print("❌ Error obteniendo links:", e)
+        return []
 
-        wait = WebDriverWait(driver, 10)
-        items = wait.until(
-            EC.presence_of_all_elements_located((By.CLASS_NAME, "ui-search-layout__item"))
-        )
+def scrapear_propiedades(links):
+    print("📦 Scrapeando propiedades...")
+    resultados = []
 
-        print(f"Página {pagina} -> {len(items)} elementos")
+    batch_size = 10
 
-        for item in items:
-            try:
-                # -------- TITULO --------
-                titulo_elem = item.find_elements(By.CLASS_NAME, "ui-search-item__title")
-                titulo = titulo_elem[0].text if titulo_elem else "No disponible"
+    for i in range(0, len(links), batch_size):
+        batch = links[i:i+batch_size]
+        print(f"➡️ Batch {i} - {i+len(batch)}")
 
-                # -------- PRECIO --------
-                precio_elem = item.find_elements(By.CLASS_NAME, "andes-money-amount__fraction")
-                precio = precio_elem[0].text if precio_elem else "No disponible"
-                precio = limpiar_precio(precio)
+        try:
+            data = app.batch_scrape_urls(batch, params={
+                "formats": ["markdown"]
+            })
 
-                # -------- UBICACIÓN --------
-                ubicacion_elem = item.find_elements(By.CLASS_NAME, "ui-search-item__location")
-                ubicacion = ubicacion_elem[0].text if ubicacion_elem else "No disponible"
-
-                # -------- LINK --------
-                link_elem = item.find_elements(By.TAG_NAME, "a")
-                link = link_elem[0].get_attribute("href") if link_elem else "No disponible"
-
-                # -------- FILTRO --------
-                if precio is not None:
-                    data.append({
-                        "titulo": titulo,
-                        "precio": precio,
-                        "ubicacion": ubicacion,
-                        "link": link
+            if data and "data" in data:
+                for item in data["data"]:
+                    resultados.append({
+                        "url": item.get("metadata", {}).get("url", ""),
+                        "contenido": item.get("markdown", "")
                     })
 
-            except:
-                continue
+            time.sleep(1)
 
-        # -------- DELAY --------
-        time.sleep(2)
+        except Exception as e:
+            print("❌ Error en batch:", e)
 
-    except:
-        print(f"Error en página {pagina}")
-        continue
+    return resultados
 
-# -------- CERRAR --------
-driver.quit()
+# -------- MAIN --------
 
-# -------- DATAFRAME --------
-df = pd.DataFrame(data)
+url = "https://inmuebles.mercadolibre.com.mx/terrenos/venta/toluca"
 
-# -------- LIMPIEZA FINAL --------
-df = df.drop_duplicates()
+links = obtener_links(url)
 
-print(f"\nTotal de registros: {len(df)}")
+guardar_json(links, "links_terrenos.json")
 
-# -------- EXPORTAR --------
-df.to_excel("terrenos_final.xlsx", index=False)
+# prueba con pocos
+links = links[:30]
 
-print("\nArchivo guardado como terrenos_final.xlsx")
+resultados = scrapear_propiedades(links)
+
+guardar_json(resultados, "terrenos_firecrawl.json")
+
+print("✅ SCRAPER FIRECRAWL TERMINADO")
