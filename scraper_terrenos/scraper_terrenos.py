@@ -1,60 +1,86 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
-import pandas as pd
+from firecrawl import FirecrawlApp
+import json
+import os
 import time
+from dotenv import load_dotenv
 
-# Configurar navegador automático
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service)
+# -------- CONFIG --------
+load_dotenv()
+api_key = os.getenv("FIRECRAWL_API_KEY")
 
-url = "https://inmuebles.mercadolibre.com.mx/terrenos/venta/toluca"
-driver.get(url)
+if not api_key:
+    raise ValueError("❌ No se encontró la API KEY. Revisa tu archivo .env")
 
-time.sleep(5)
+app = FirecrawlApp(api_key=api_key)
 
-# Obtener todos los anuncios
-items = driver.find_elements(By.CLASS_NAME, "ui-search-layout__item")
+# -------- FUNCIONES --------
 
-print(f"Se encontraron {len(items)} elementos")
+def guardar_json(data, nombre):
+    with open(nombre, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
 
-data = []
+def obtener_links(url):
+    print("🔎 Obteniendo links...")
 
-for item in items:
     try:
-        # Obtener todo el texto del anuncio
-        texto = item.text.split("\n")
+        data = app.scrape(url, params={
+            "formats": ["links"]
+        })
 
-        # Limpiar texto vacío
-        texto = [t for t in texto if t.strip() != ""]
+        links = data.get("links", [])
 
-        # -------- EXTRAER DATOS --------
+        # Filtrar solo propiedades reales
+        links = [l for l in links if "inmueble.mercadolibre.com.mx" in l]
 
-        titulo = texto[0] if len(texto) > 0 else "No disponible"
-        precio = next((t for t in texto if "$" in t or "," in t), "No disponible")
-        ubicacion = texto[-1] if len(texto) > 1 else "No disponible"
+        print(f"✅ {len(links)} links encontrados")
+        return links
 
-        # -------- FILTRO INTELIGENTE --------
-        if "Terreno" in titulo and precio != "No disponible":
-            data.append({
-                "titulo": titulo,
-                "precio": precio,
-                "ubicacion": ubicacion
+    except Exception as e:
+        print("❌ Error obteniendo links:", e)
+        return []
+
+def scrapear_propiedades(links):
+    print("📦 Scrapeando propiedades...")
+    resultados = []
+
+    batch_size = 10
+
+    for i in range(0, len(links), batch_size):
+        batch = links[i:i+batch_size]
+        print(f"➡️ Batch {i} - {i+len(batch)}")
+
+        try:
+            data = app.batch_scrape_urls(batch, params={
+                "formats": ["markdown"]
             })
 
-    except:
-        continue
+            if data and "data" in data:
+                for item in data["data"]:
+                    resultados.append({
+                        "url": item.get("metadata", {}).get("url", ""),
+                        "contenido": item.get("markdown", "")
+                    })
 
-driver.quit()
+            time.sleep(1)
 
-# Crear DataFrame
-df = pd.DataFrame(data)
+        except Exception as e:
+            print("❌ Error en batch:", e)
 
-print("\nDATOS LIMPIOS:\n")
-print(df.head())
+    return resultados
 
-# -------- GUARDAR EN EXCEL --------
-df.to_excel("terrenos_filtrados.xlsx", index=False)
+# -------- MAIN --------
 
-print("\nArchivo guardado como terrenos_filtrados.xlsx")
+url = "https://inmuebles.mercadolibre.com.mx/terrenos/venta/toluca"
+
+links = obtener_links(url)
+
+guardar_json(links, "links_terrenos.json")
+
+# prueba con pocos
+links = links[:30]
+
+resultados = scrapear_propiedades(links)
+
+guardar_json(resultados, "terrenos_firecrawl.json")
+
+print("✅ SCRAPER FIRECRAWL TERMINADO")
