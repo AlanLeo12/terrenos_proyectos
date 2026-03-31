@@ -21,11 +21,6 @@ def save_json(data, filename):
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-def open_json(path):
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
-
 # -------- CRAWLER --------
 
 def scrapear_pagina(url):
@@ -53,7 +48,7 @@ def obtener_paginas(markdown):
         return 3
 
 
-def obtener_urls(url_base):
+def obtener_urls(url_base, nombre_archivo):
     all_links = []
 
     links, markdown = scrapear_pagina(url_base + "?page=1")
@@ -76,19 +71,19 @@ def obtener_urls(url_base):
 
     print(f"Total de links: {len(links_unicos)}")
 
-    save_json(links_unicos, "links_lamudi.json")
+    save_json(links_unicos, f"links_{nombre_archivo}.json")
 
     return links_unicos
 
 
 # -------- SCRAPER --------
 
-def scrapear_propiedades(links):
+def scrapear_propiedades(links, nombre_archivo):
     resultados = []
 
     print("Extrayendo propiedades...")
 
-    links = links[:10]
+    links = links[:10]  # limitar uso de API
 
     batches = [links[i:i + 5] for i in range(0, len(links), 5)]
 
@@ -98,12 +93,11 @@ def scrapear_propiedades(links):
         try:
             data = app.batch_scrape(batch, formats=["markdown"])
         except:
-            print("Reintentando batch con proxy...")
+            print("Reintentando con proxy...")
             data = app.batch_scrape(batch, formats=["markdown"], proxy="stealth")
 
         for item in data.data:
             texto = item.markdown if hasattr(item, "markdown") else ""
-
             texto = re.sub(r'\s+', ' ', texto)
 
             resultados.append({
@@ -113,7 +107,7 @@ def scrapear_propiedades(links):
 
         time.sleep(1)
 
-    save_json(resultados, "resultados_lamudi.json")
+    save_json(resultados, f"resultados_{nombre_archivo}.json")
 
     return resultados
 
@@ -122,10 +116,15 @@ def scrapear_propiedades(links):
 
 if __name__ == "__main__":
 
-    url_base = "https://www.lamudi.com.mx/distrito-federal/comercial/for-sale/"
+    urls = {
+        "toluca": "https://www.lamudi.com.mx/estado-de-mexico/toluca/terreno/for-sale/",
+        "metepec": "https://www.lamudi.com.mx/estado-de-mexico/metepec/terreno/for-sale/"
+    }
 
-    links = obtener_urls(url_base)
+    for nombre, url in urls.items():
+        print(f"\n--- PROCESANDO {nombre.upper()} ---\n")
 
-    resultados = scrapear_propiedades(links)
+        links = obtener_urls(url, nombre)
+        scrapear_propiedades(links, nombre)
 
-    print("Proceso terminado")
+    print("\nProceso terminado")
